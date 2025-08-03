@@ -2,22 +2,19 @@ import './Projects.css';
 
 const projects = [
   {
-    name: 'Travel Blog Platform',
-    description: 'A full-stack web app for publishing and sharing travel blogs.',
-    work: 'Built backend API using Node.js and MongoDB, integrated JWT authentication, and designed frontend in React.',
-    image: 'https://source.unsplash.com/400x300/?travel,blog'
+    name: 'IMGWEB',
+    description: 'Group project where we made an Image Editing website that performs basic image editing functions.',
+    work: '',
   },
   {
-    name: 'Portfolio Website',
+    name: 'QuikMail',
     description: 'My personal portfolio site showcasing skills and blogs.',
-    work: 'Designed the layout using React, implemented responsive sections, and added dynamic blog support.',
-    image: 'https://source.unsplash.com/400x300/?developer,portfolio'
+    work: '',
   },
   {
-    name: 'Content Sync System',
-    description: 'CMS → Node → React pipeline for syncing visit content in real time.',
-    work: 'Designed JSON sync logic, created state-based polling system, and optimized disk storage.',
-    image: 'https://source.unsplash.com/400x300/?api,server'
+    name: 'Abstract API Email validator',
+    description: 'Develop the email validation module and publish the same on drupal.org .',
+    work: '',
   }
 ];
 
@@ -26,14 +23,27 @@ export default function Projects() {
     <section id="projects" className="projects-section">
       <div className="projects-container">
         <h2>Projects</h2>
-        <div className="projects-grid">
+        <div className="personal-projects-grid">
           {projects.map((project, index) => (
-            <div className="project-card" key={index}>
-              <img src={project.image} alt={project.name} />
-              <div className="project-info">
-                <h3>{project.name}</h3>
-                <p className="desc">{project.description}</p>
-                <p className="work"><strong>What I worked on:</strong> {project.work}</p>
+            <div className="project-flip-card" key={index}>
+              <div className="project-inner">
+                {/* Front */}
+                <div className="project-front no-image">
+                  <h3>{project.name}</h3>
+                </div>
+
+                {/* Back */}
+                <div className="project-back">
+                  <h4>{project.name}</h4>
+                  <p className="desc">{project.description}</p>
+                  <ul className="work-list">
+                    {project.work
+                      ?? project.work.split(',').map((item, i) => (
+                        <li key={i}>{item.trim()}</li>
+                      ))
+                    }
+                  </ul>
+                </div>
               </div>
             </div>
           ))}

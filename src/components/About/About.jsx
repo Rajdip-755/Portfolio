@@ -7,10 +7,11 @@ export default function About() {
         <div className="about-text">
           <h2>About Me</h2>
           <p>
-            I’m Rajdip Roy, a backend-focused web developer with a love for building fast, scalable systems using Node.js, Drupal, and MongoDB.
-          </p>
-          <p>
-            Beyond code, I’m a passionate traveler. I write blogs about offbeat destinations, solo trips, and local experiences across India.
+            Backend Developer | Drupal, Node.js, MongoDB | Passionate about building scalable systems and solving real-world problems with clean code and smart tools.
+            <br />
+            I blend backend logic with AI-assisted workflows to simplify development, and share my journey through photography and travel blogs.
+            <br />
+            Let's <a href="#contact">connect </a>, collaborate, or talk code & culture.
           </p>
         </div>
         <div className="about-image">

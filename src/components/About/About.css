@@ -1,8 +1,14 @@
+@import url('../../styles/variables.css');
+
+/* === Base About Section === */
 .about-section {
-  background: #fff;
+  background: var(--gradient-section-bg);
   padding: 80px 24px;
+  transition: background 0.4s ease, color 0.3s ease;
+  color: var(--color-text);
 }
 
+/* === Container === */
 .about-container {
   max-width: 1000px;
   margin: 0 auto;
@@ -11,10 +17,15 @@
   gap: 2rem;
 }
 
+/* === Text Column === */
 .about-text h2 {
   font-size: 2.5rem;
-  color: var(--color-accent);
   margin-bottom: 1rem;
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }
 
 .about-text p {
@@ -24,14 +35,26 @@
   line-height: 1.7;
 }
 
+/* === Image Column === */
 .about-image img {
   width: 100%;
   max-width: 360px;
   border-radius: 12px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-/* Responsive: two-column on medium+ screens */
+.about-image img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* === Dark Mode Shadow === */
+body.dark .about-image img {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* === Responsive Layout === */
 @media (min-width: 768px) {
   .about-container {
     flex-direction: row;

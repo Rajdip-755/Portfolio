@@ -1,40 +1,74 @@
 /* index.css */
 
+/* 🌈 Theme Variables */
 :root {
-  --font-main: 'Poppins', sans-serif;
+  /* Backgrounds & Text */
+  --bg-light: #ffffff;
+  --bg-dark: #0f172a;
+  --text-light: #1f2937;
+  --text-dark: #f9fafb;
+  --font-main: 'Roboto', sans-serif;
+
+  /* UI Colors */
   --color-bg: #f3f4f6;
-  --color-text: #1f2937;
-  --color-accent: #7c3aed; /* violet */
   --color-card: #ffffff;
+  --color-text: #1f2937;
   --color-muted: #6b7280;
+  --color-accent: #7c3aed;
+  --color-accent-hover: #5b21b6;
+
+  /* Gradients */
+  --gradient-accent: linear-gradient(135deg, #a855f7, #ec4899);
+  --gradient-secondary: linear-gradient(135deg, #6366f1, #8b5cf6);
+  --gradient-hero-overlay: linear-gradient(rgba(30, 30, 30, 0.8), rgba(0, 0, 0, 0.85));
 }
 
+body.dark {
+  --color-bg: #1e293b;
+  --color-card: #273549;
+  --color-text: #f3f4f6;
+  --color-muted: #9ca3af;
+  --color-accent: #93c5fd;
+  --color-accent-hover: #b560fa;
+}
+
+/* 🔧 Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* 🧍 Body */
 body {
   font-family: var(--font-main);
-  background: var(--color-bg);
+  background-color: var(--color-bg);
   color: var(--color-text);
   line-height: 1.6;
   padding-top: 70px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* 🌐 Links */
 a {
   color: var(--color-accent);
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
+a:hover {
+  color: var(--color-accent-hover);
+}
+
+/* 📄 Sections */
 section {
   padding: 80px 24px;
   max-width: 100%;
   margin: 0 auto;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
+/* 🧱 Headings */
 h1, h2 {
   font-weight: 700;
   margin-bottom: 0.75em;
@@ -43,9 +77,12 @@ h1, h2 {
 
 h2 {
   font-size: 2.5rem;
-  color: var(--color-accent);
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
+/* 🔘 Buttons */
 button {
   background: var(--color-accent);
   color: #fff;
@@ -58,5 +95,5 @@ button {
 }
 
 button:hover {
-  background: #5b21b6;
+  background: var(--color-accent-hover);
 }

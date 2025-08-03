@@ -6,17 +6,22 @@ export default function Blog() {
   return (
     <section id="blog" className="blog-section">
       <div className="blog-container">
+        {/* Sticky Heading */}
         <h2>Travel Blogs</h2>
-        <div className="blog-grid">
-          {blogs.map(blog => (
-            <Link to={`/blog/${blog.id}`} className="blog-card" key={blog.id}>
-              <img src={blog.image} alt={blog.title} />
-              <div className="blog-info">
-                <h3>{blog.title}</h3>
-                <p>{blog.excerpt}</p>
-              </div>
-            </Link>
-          ))}
+
+        {/* Scrollable Grid Container */}
+        <div className="blog-scroll-area">
+          <div className="blog-grid">
+            {blogs.map(blog => (
+              <Link to={`/blog/${blog.id}`} className="blog-card" key={blog.id}>
+                <img src={blog.image} alt={blog.title} />
+                <div className="blog-info">
+                  <h3>{blog.title}</h3>
+                  <p>{blog.excerpt}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </section>
